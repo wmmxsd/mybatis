@@ -36,6 +36,7 @@ public final class LogFactory {
   //具体究竟用哪个日志框架，那个框架所对应logger的构造函数
   private static Constructor<? extends Log> logConstructor;
 
+  //默认使用Slf4j日志框架，如果在mybatis-config中配置了<setting name="logImpl" value="日志框架别名"/>，则会被其覆盖
   static {
     //这边乍一看以为开了几个并行的线程去决定使用哪个具体框架的logging，其实不然
     //slf4j
